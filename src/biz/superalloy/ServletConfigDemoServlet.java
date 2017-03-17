@@ -39,10 +39,18 @@ public class ServletConfigDemoServlet implements Servlet {
 		writer.print("<html><head></head><body>" + "Admin:" + admin + "<br/>Email:" + email + "</body></html>");
 		
 		ServletContext servletContext = servletConfig.getServletContext();
+		//servletContext.getInitParameterNames()
 		Enumeration<String> enumeration = servletContext.getAttributeNames();
 		while(enumeration.hasMoreElements()){
 			System.out.println(enumeration.nextElement());
 		}
+		
+		
+		Enumeration<String> e = servletContext.getInitParameterNames();
+		while(e.hasMoreElements()){
+			System.out.println(e.nextElement());
+		}
+		
 	}
 
 	@Override
