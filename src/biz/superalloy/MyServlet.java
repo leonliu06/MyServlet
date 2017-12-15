@@ -3,6 +3,7 @@ package biz.superalloy;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
+import java.util.Locale;
 import java.util.Map.Entry;
 
 import javax.servlet.Servlet;
@@ -71,6 +72,9 @@ public class MyServlet implements Servlet{
 			}
 			System.out.println();
 		}
+		
+		Locale locale = request.getLocale();
+		System.out.println("locale: " + locale.getCountry() + "-" + locale.getDisplayLanguage() + "-" + locale.getLanguage() + "-" + locale.getDefault());
 		
 		
 		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
